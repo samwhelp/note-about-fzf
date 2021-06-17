@@ -19,13 +19,15 @@ item_find_thumb_file_path () {
 
 item_find_id_by_title () {
 	local title="$1"
-	local id=$(echo "$title" | awk -F "  -  " '{printf $2}')
+	#local id=$(echo "$title" | awk -F "  -  " '{printf $2}')
+	local id=$(echo "$title" | awk -F "  │  " '{printf $2}')
 	printf "%s" "$id"
 }
 
 item_create_title_by_id () {
 	local id="$1"
-	printf "%s  -  %s\n" "$(item_find_title $id)" "$id"
+	#printf "%s  -  %s\n" "$(item_find_title $id)" "$id"
+	printf "%s  │  %s\n" "$(item_find_title $id)" "$id"
 }
 
 ##
