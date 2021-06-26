@@ -19,3 +19,10 @@
 | 議題 |
 | --- |
 | [預覽](https://samwhelp.github.io/note-about-fzf/read/start/preview/) |
+
+
+### 安裝
+
+| 議題 |
+| --- |
+| manjaro 探索筆記 / [ueberzug](https://samwhelp.github.io/note-about-manjaro/read/adjustment/tool/ueberzug.html) |
