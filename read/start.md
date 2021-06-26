@@ -1,6 +1,6 @@
 ---
 title: 入門
-nav_order: 1
+nav_order: 1000
 has_children: true
 ---
 
