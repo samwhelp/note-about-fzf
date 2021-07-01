@@ -27,6 +27,7 @@ mod_wallpaper_select_set () {
 
 	## feh --bg-scale "/usr/share/backgrounds/xfce/palm-wave.jpg"
 
+	echo "## mod_wallpaper_select_set"
 	echo "feh $option $target"
 	feh "$option" "$target"
 

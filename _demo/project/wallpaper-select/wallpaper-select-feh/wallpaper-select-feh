@@ -359,7 +359,7 @@ sys_fzf_wallpaper_preview_text () {
 
 sys_fzf_wallpaper_preview_image_remove () {
 	echo
-	echo "## preview_image_remove"
+	echo "## sys_fzf_wallpaper_preview_image_remove"
 
 	local thumb_id="wallpaper"
 
@@ -844,10 +844,9 @@ EOF
 
 	local selected=$(sys_wallpaper_select_list_by_dir . | fzf --preview "$preview_app {}" --preview-window "$PREVIEW_SIDE:50%:noborder:wrap")
 
-	sys_fzf_wallpaper_preview_image_remove
-
 	echo
 	echo "## Selected: $selected"
+	sys_fzf_wallpaper_preview_image_remove
 	echo
 
 	if [ "none$selected" = "none" ]; then
@@ -1038,6 +1037,7 @@ mod_wallpaper_select_set () {
 
 	## feh --bg-scale "/usr/share/backgrounds/xfce/palm-wave.jpg"
 
+	echo "## mod_wallpaper_select_set"
 	echo "feh $option $target"
 	feh "$option" "$target"
 

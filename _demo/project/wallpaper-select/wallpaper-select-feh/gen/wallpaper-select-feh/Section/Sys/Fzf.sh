@@ -19,7 +19,7 @@ sys_fzf_wallpaper_preview_text () {
 
 sys_fzf_wallpaper_preview_image_remove () {
 	echo
-	echo "## preview_image_remove"
+	echo "## sys_fzf_wallpaper_preview_image_remove"
 
 	local thumb_id="wallpaper"
 
