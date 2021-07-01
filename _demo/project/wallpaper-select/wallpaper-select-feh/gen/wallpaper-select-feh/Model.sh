@@ -1,0 +1,14 @@
+<?php include_once(__DIR__ . '/Section/Sys/Feh.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Sys/Wallpaper.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/cd_default/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/cd_favorite/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/cd_xfce/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/path_default/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/path_favorite/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/path_xfce/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/fzf/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/fzf_no_preview/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/default/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/list/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/get/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/set/Core.sh'); ?>
