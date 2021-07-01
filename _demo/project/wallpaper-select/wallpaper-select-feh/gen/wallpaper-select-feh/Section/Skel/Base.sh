@@ -82,6 +82,9 @@ base_var_init () {
 	THE_CACHE_DIR_PATH="$HOME/.cache/$THE_CACHE_DIR_NAME"
 
 
+	## ueberzug
+	THE_UEBERZUG_CTRL="/tmp/ueberzug-ctrl"
+
 	## feh
 	THE_FEH_BG_OPTION_LIST="center fill max scale tile"
 
@@ -144,10 +147,21 @@ base_var_dump () {
 
 
 
+
+	## ueberzug
+	util_debug_echo "THE_UEBERZUG_CTRL=$THE_UEBERZUG_CTRL"
+
+	## feh
 	util_debug_echo "THE_FEH_BG_OPTION_LIST=$THE_FEH_BG_OPTION_LIST"
 
+	## wallpaper
 	util_debug_echo "THE_WALLPAPER_DEFAULT_FILE_PATH=$THE_WALLPAPER_DEFAULT_FILE_PATH"
 
+	util_debug_echo "THE_WALLPAPER_DEFAULT_DIR_PATH=$THE_WALLPAPER_DEFAULT_DIR_PATH"
+
+	util_debug_echo "THE_WALLPAPER_FAVORITE_DIR_PATH=$THE_WALLPAPER_FAVORITE_DIR_PATH"
+
+	util_debug_echo "THE_WALLPAPER_XFCE_DIR_PATH=$THE_WALLPAPER_XFCE_DIR_PATH"
 
 
 	util_debug_echo "#"

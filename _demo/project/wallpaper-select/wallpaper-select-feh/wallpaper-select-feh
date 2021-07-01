@@ -105,6 +105,9 @@ base_var_init () {
 	THE_CACHE_DIR_PATH="$HOME/.cache/$THE_CACHE_DIR_NAME"
 
 
+	## ueberzug
+	THE_UEBERZUG_CTRL="/tmp/ueberzug-ctrl"
+
 	## feh
 	THE_FEH_BG_OPTION_LIST="center fill max scale tile"
 
@@ -167,10 +170,21 @@ base_var_dump () {
 
 
 
+
+	## ueberzug
+	util_debug_echo "THE_UEBERZUG_CTRL=$THE_UEBERZUG_CTRL"
+
+	## feh
 	util_debug_echo "THE_FEH_BG_OPTION_LIST=$THE_FEH_BG_OPTION_LIST"
 
+	## wallpaper
 	util_debug_echo "THE_WALLPAPER_DEFAULT_FILE_PATH=$THE_WALLPAPER_DEFAULT_FILE_PATH"
 
+	util_debug_echo "THE_WALLPAPER_DEFAULT_DIR_PATH=$THE_WALLPAPER_DEFAULT_DIR_PATH"
+
+	util_debug_echo "THE_WALLPAPER_FAVORITE_DIR_PATH=$THE_WALLPAPER_FAVORITE_DIR_PATH"
+
+	util_debug_echo "THE_WALLPAPER_XFCE_DIR_PATH=$THE_WALLPAPER_XFCE_DIR_PATH"
 
 
 	util_debug_echo "#"
@@ -323,6 +337,133 @@ util_self_actions () {
 
 ##
 ### Tail: Util_Self_Update
+################################################################################
+
+################################################################################
+### Head: Sys / Fzf
+##
+
+
+sys_fzf_wallpaper_preview_text () {
+
+	local file_name="$1"
+	local dir_path="$THE_CWD_PATH"
+
+	echo
+	printf "## Info\n"
+	printf "File: %s\n" "$file_name"
+	printf "Dir: %s\n" "$dir_path"
+	printf "Path: %s\n" "$dir_path/$file_name"
+	echo
+}
+
+
+
+sys_fzf_wallpaper_preview_image () {
+
+	local thumb_dir_path="$THE_CWD_PATH"
+	local thumb_id="wallpaper"
+	local thumb_file_name="$1"
+	local thumb_file_path="$thumb_dir_path/$thumb_file_name"
+	local thumb_x=1
+	local thumb_y=10
+	local thumb_width=15
+	local thumb_height=20
+
+
+
+	{
+		printf '{'
+		printf '"action": "add",'
+		printf '"identifier": "%s",' "$thumb_id"
+		printf '"path": "%s",' "$thumb_file_path"
+		printf '"x": %d,' "$thumb_x"
+		printf '"y": %d,' "$thumb_y"
+		printf '"width": %d,' "$thumb_width"
+		printf '"height": %d,' "$thumb_height"
+		printf '"scaler": "fit_contain"'
+		printf '}\n'
+
+	} > "$THE_UEBERZUG_CTRL"
+}
+
+
+sys_fzf_wallpaper_preview_main () {
+	sys_fzf_wallpaper_preview_text "$1"
+	sys_fzf_wallpaper_preview_image "$1"
+}
+
+
+##
+### Tail: Sys / Fzf
+################################################################################
+
+################################################################################
+### Head: Sys / Ueberzug
+##
+
+sys_ueberzug_ipc_start () {
+
+	echo
+	echo '## sys_ueberzug_ipc_start'
+
+	## THE_UEBERZUG_CTRL="/tmp/ueberzug-ctrl"
+
+	if [ -e "$THE_UEBERZUG_CTRL" ]; then
+		echo "rm -f $THE_UEBERZUG_CTRL"
+		rm -f "$THE_UEBERZUG_CTRL"
+		#return 0
+	fi
+
+	echo "mkfifo $THE_UEBERZUG_CTRL"
+	mkfifo "$THE_UEBERZUG_CTRL"
+
+	if [ -e "$THE_UEBERZUG_CTRL" ]; then
+		export THE_UEBERZUG_CTRL
+		return 0
+	else
+		return 1
+	fi
+
+}
+
+sys_ueberzug_ipc_stop () {
+	echo
+	echo '## sys_ueberzug_ipc_stop'
+	if [ -e "$THE_UEBERZUG_CTRL" ]; then
+		echo "rm -f $THE_UEBERZUG_CTRL"
+		rm -f "$THE_UEBERZUG_CTRL"
+		#return 0
+	fi
+}
+
+
+sys_ueberzug_app_start () {
+	echo
+	echo '## sys_ueberzug_app_start'
+	ueberzug layer --silent --parser json < "$THE_UEBERZUG_CTRL" &
+	echo "ueberzug layer --silent --parser json < $THE_UEBERZUG_CTRL &"
+	exec 3>"$THE_UEBERZUG_CTRL"
+}
+
+sys_ueberzug_app_stop () {
+	echo
+	echo '## sys_ueberzug_app_stop'
+	exec 3>&-
+}
+
+
+sys_ueberzug_ses_start () {
+	sys_ueberzug_ipc_start && sys_ueberzug_app_start
+}
+
+sys_ueberzug_ses_stop () {
+	sys_ueberzug_app_stop
+	sys_ueberzug_ipc_stop
+}
+
+##
+### Tail: Sys / Ueberzug
 ################################################################################
 
 
@@ -652,6 +793,18 @@ mod_fzf () {
 	#echo "mod_fzf"
 	#echo "$@"
 
+
+
+
+	mod_fzf_ses_start "$@"
+
+
+
+}
+
+
+mod_fzf_app_start () {
+
 	if ! is_command_exist 'fzf'; then
 
 cat << EOF
@@ -667,9 +820,13 @@ EOF
 	fi
 
 
+	PREVIEW_SIDE="left"
 
+	export THE_CWD_PATH=$(pwd)
 
-	local selected=$(sys_wallpaper_select_list_by_dir . | fzf)
+	local preview_app="$0 _fzf_preview_area"
+
+	local selected=$(sys_wallpaper_select_list_by_dir . | fzf --preview "$preview_app {}" --preview-window "$PREVIEW_SIDE:50%:noborder:wrap")
 
 	echo
 	echo "## Selected: $selected"
@@ -681,6 +838,13 @@ EOF
 
 	mod_wallpaper_select_set "$selected"
 
+
+}
+
+mod_fzf_ses_start () {
+	trap sys_ueberzug_ses_stop EXIT QUIT INT TERM
+	sys_ueberzug_ses_start "$@"
+	mod_fzf_app_start "$@"
 }
 
 ##
@@ -729,6 +893,25 @@ EOF
 
 ##
 ### Tail: Model fzf_no_preview
+################################################################################
+
+
+################################################################################
+### Head: Model mod_wallpaper_select__fzf_preview_area
+##
+
+mod_wallpaper_select__fzf_preview_area () {
+	#echo "mod_wallpaper_select__fzf_preview_area"
+	#echo "$@"
+
+	# wallpaper-select-feh _fzf_preview_area
+
+	sys_fzf_wallpaper_preview_main "$@"
+
+}
+
+##
+### Tail: Model mod_wallpaper_select__fzf_preview_area
 ################################################################################
 
 
@@ -918,6 +1101,12 @@ sub_run_fzf_no_preview () {
 }
 
 
+sub_run__fzf_preview_area () {
+	#echo "sub_run__fzf_preview_area"
+	mod_wallpaper_select__fzf_preview_area "$@"
+}
+
+
 sub_run_default () {
 	#echo "sub_run_default"
 	mod_wallpaper_select_default
@@ -998,6 +1187,8 @@ Example:
 		$ $cmd_name fzf
 
 		$ $cmd_name fzf_no_preview
+
+		$ $cmd_name _fzf_preview_area
 
 	## wallpaper_select
 
