@@ -17,6 +17,20 @@ sys_fzf_wallpaper_preview_text () {
 	echo
 }
 
+sys_fzf_wallpaper_preview_image_remove () {
+	echo
+	echo "## preview_image_remove"
+
+	local thumb_id="wallpaper"
+
+	{
+		printf '{'
+		printf '"identifier": "%s",' "$thumb_id"
+		printf '"action": "remove"'
+		printf '}\n'
+
+	} > "$THE_UEBERZUG_CTRL"
+}
 
 
 sys_fzf_wallpaper_preview_image () {
@@ -34,14 +48,16 @@ sys_fzf_wallpaper_preview_image () {
 
 	{
 		printf '{'
-		printf '"action": "add",'
+
 		printf '"identifier": "%s",' "$thumb_id"
 		printf '"path": "%s",' "$thumb_file_path"
 		printf '"x": %d,' "$thumb_x"
 		printf '"y": %d,' "$thumb_y"
 		printf '"width": %d,' "$thumb_width"
 		printf '"height": %d,' "$thumb_height"
-		printf '"scaler": "fit_contain"'
+		printf '"scaler": "fit_contain",'
+
+		printf '"action": "add"'
 		printf '}\n'
 
 	} > "$THE_UEBERZUG_CTRL"
