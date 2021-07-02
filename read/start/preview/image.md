@@ -8,7 +8,15 @@ grand_parent: 入門
 
 # 圖片
 
-* [範例](https://github.com/samwhelp/note-about-fzf/tree/gh-pages/_demo/start/preview/image_by_ueberzug)
+
+## 入門範例
+
+* [入門範例](https://github.com/samwhelp/note-about-fzf/tree/gh-pages/_demo/start/preview/image_by_ueberzug)
+
+
+## 專案應用
+
+* [wallpaper-select-feh](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-feh)
 
 
 ## ueberzug
