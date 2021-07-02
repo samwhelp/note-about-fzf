@@ -15,4 +15,4 @@ parent: 專案
 
 ## Tool
 
-* [wallpaper-select-feh](spectrwmrc-get)
+* [wallpaper-select-feh](wallpaper-select-feh)
