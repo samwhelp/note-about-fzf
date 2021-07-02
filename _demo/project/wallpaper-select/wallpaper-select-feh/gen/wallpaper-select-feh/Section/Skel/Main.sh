@@ -31,10 +31,13 @@ Example:
 
 		$ $cmd_name self_actions
 
-	## Cd
+	## prepare
+<?php include_once(dirname(__DIR__) . '/Model/UsagePrepare.sh'); ?>
+
+	## cd
 <?php include_once(dirname(__DIR__) . '/Model/UsageCd.sh'); ?>
 
-	## Path
+	## path
 <?php include_once(dirname(__DIR__) . '/Model/UsagePath.sh'); ?>
 
 	## fzf

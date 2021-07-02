@@ -686,6 +686,40 @@ sys_wallpaper_select_list_by_dir () {
 
 
 ################################################################################
+### Head: Model mod_wallpaper_select_manjaro_prepare
+##
+
+mod_wallpaper_select_manjaro_prepare () {
+	#echo "mod_wallpaper_select_manjaro_prepare"
+	#echo "$@"
+
+	# wallpaper-select-feh manjaro_prepare
+
+	mod_wallpaper_select_manjaro_prepare_install_package
+
+}
+
+
+mod_wallpaper_select_manjaro_prepare_install_package () {
+
+	pamac install feh fzf ueberzug
+
+}
+
+##
+## * https://discover.manjaro.org/packages/feh
+## * https://discover.manjaro.org/packages/fzf
+## * https://archlinux.org/packages/extra/x86_64/feh/
+## * https://archlinux.org/packages/community/x86_64/fzf/
+## * https://archlinux.org/packages/community/x86_64/ueberzug/
+##
+
+##
+### Tail: Model mod_wallpaper_select_manjaro_prepare
+################################################################################
+
+
+################################################################################
 ### Head: Model mod_wallpaper_select_cd_default
 ##
 
@@ -1071,6 +1105,12 @@ sub_run_self_actions () {
 
 
 
+sub_run_manjaro_prepare () {
+	#echo "sub_run_manjaro_prepare"
+	mod_wallpaper_select_manjaro_prepare "$@"
+}
+
+
 sub_run_cd_default () {
 	#echo "sub_run_cd_default"
 	mod_wallpaper_select_cd_default "$@"
@@ -1184,7 +1224,11 @@ Example:
 
 		$ $cmd_name self_actions
 
-	## Cd
+	## prepare
+
+		$ $cmd_name manjaro_prepare
+
+	## cd
 
 		$ $cmd_name cd_default
 
@@ -1192,7 +1236,7 @@ Example:
 
 		$ $cmd_name cd_xfce
 
-	## Path
+	## path
 
 		$ $cmd_name path_default
 
