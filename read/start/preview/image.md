@@ -11,7 +11,7 @@ grand_parent: 入門
 
 ## 入門範例
 
-* [入門範例](https://github.com/samwhelp/note-about-fzf/tree/gh-pages/_demo/start/preview/image_by_ueberzug)
+* [fzf使用ueberzug預覽圖片入門範例](https://github.com/samwhelp/note-about-fzf/tree/gh-pages/_demo/start/preview/image_by_ueberzug)
 
 
 ## 專案應用
