@@ -3,6 +3,7 @@
 <?php include_once(__DIR__ . '/Section/Sys/Feh.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Sys/Wallpaper.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Model/manjaro_prepare/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/ubuntu_prepare/Core.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Model/cd_default/Core.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Model/cd_favorite/Core.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Model/cd_xfce/Core.sh'); ?>

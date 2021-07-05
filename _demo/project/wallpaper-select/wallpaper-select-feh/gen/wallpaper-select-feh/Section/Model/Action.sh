@@ -1,4 +1,5 @@
 <?php include_once(__DIR__ . '/manjaro_prepare/Action.sh'); ?>
+<?php include_once(__DIR__ . '/ubuntu_prepare/Action.sh'); ?>
 <?php include_once(__DIR__ . '/cd_default/Action.sh'); ?>
 <?php include_once(__DIR__ . '/cd_favorite/Action.sh'); ?>
 <?php include_once(__DIR__ . '/cd_xfce/Action.sh'); ?>
