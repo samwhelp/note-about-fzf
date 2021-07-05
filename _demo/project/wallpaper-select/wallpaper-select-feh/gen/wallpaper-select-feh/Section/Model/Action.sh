@@ -5,6 +5,8 @@
 <?php include_once(__DIR__ . '/path_default/Action.sh'); ?>
 <?php include_once(__DIR__ . '/path_favorite/Action.sh'); ?>
 <?php include_once(__DIR__ . '/path_xfce/Action.sh'); ?>
+<?php include_once(__DIR__ . '/shuf/Action.sh'); ?>
+<?php include_once(__DIR__ . '/shuf_file_path/Action.sh'); ?>
 <?php include_once(__DIR__ . '/fzf/Action.sh'); ?>
 <?php include_once(__DIR__ . '/fzf_no_preview/Action.sh'); ?>
 <?php include_once(__DIR__ . '/_fzf_preview_area/Action.sh'); ?>

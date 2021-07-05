@@ -40,6 +40,9 @@ Example:
 	## path
 <?php include_once(dirname(__DIR__) . '/Model/UsagePath.sh'); ?>
 
+	## shuf
+<?php include_once(dirname(__DIR__) . '/Model/UsageShuf.sh'); ?>
+
 	## fzf
 <?php include_once(dirname(__DIR__) . '/Model/UsageFzf.sh'); ?>
 

@@ -837,6 +837,44 @@ mod_wallpaper_select_path_xfce () {
 
 
 ################################################################################
+### Head: Model mod_wallpaper_select_shuf
+##
+
+mod_wallpaper_select_shuf () {
+	#echo "mod_wallpaper_select_shuf"
+	#echo "$@"
+
+	# wallpaper-select-feh shuf
+
+	echo "Todo: mod_wallpaper_select_shuf"
+
+}
+
+##
+### Tail: Model mod_wallpaper_select_shuf
+################################################################################
+
+
+################################################################################
+### Head: Model mod_wallpaper_select_shuf_file_path
+##
+
+mod_wallpaper_select_shuf_file_path () {
+	#echo "mod_wallpaper_select_shuf_file_path"
+	#echo "$@"
+
+	# wallpaper-select-feh shuf_file_path
+
+	echo "Todo: mod_wallpaper_select_shuf_file_path"
+
+}
+
+##
+### Tail: Model mod_wallpaper_select_shuf_file_path
+################################################################################
+
+
+################################################################################
 ### Head: Model fzf
 ##
 
@@ -1148,6 +1186,18 @@ sub_run_path_xfce () {
 }
 
 
+sub_run_shuf () {
+	#echo "sub_run_shuf"
+	mod_wallpaper_select_shuf "$@"
+}
+
+
+sub_run_shuf_file_path () {
+	#echo "sub_run_shuf_file_path"
+	mod_wallpaper_select_shuf_file_path "$@"
+}
+
+
 sub_run_fzf () {
 	#echo "sub_run_fzf"
 	mod_fzf "$@"
@@ -1244,6 +1294,12 @@ Example:
 		$ $cmd_name path_favorite
 
 		$ $cmd_name path_xfce
+
+	## shuf
+
+		$ $cmd_name shuf
+
+		$ $cmd_name shuf_file_path
 
 	## fzf
 
