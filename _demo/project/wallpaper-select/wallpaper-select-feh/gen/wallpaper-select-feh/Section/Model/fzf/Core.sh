@@ -43,10 +43,10 @@ EOF
 
 	local selected=$(sys_wallpaper_select_list_by_dir . | fzf --preview "$preview_app {}" --preview-window "$PREVIEW_SIDE:50%:noborder:wrap")
 
-	echo
-	echo "## Selected: $selected"
+	util_error_echo
+	util_error_echo "## Selected: $selected"
 	sys_fzf_wallpaper_preview_image_remove
-	echo
+	util_error_echo
 
 	if [ "none$selected" = "none" ]; then
 		return 1

@@ -12,3 +12,35 @@ grand_parent: 專案
 ## 專案連結
 
 * [wallpaper-select-feh](https://github.com/samwhelp/note-about-fzf/tree/gh-pages/_demo/project/wallpaper-select/wallpaper-select-feh)
+
+
+## 使用範例
+
+### fzf
+
+先切換到有圖片的資料夾
+
+``` sh
+cd ~/Pictures
+```
+
+然後執行下面指令，就會顯示該資料夾所有圖片列表，當作是選項，提供給您做選擇。
+
+```
+wallpaper-select-feh fzf
+```
+
+
+### shuf
+
+先切換到有圖片的資料夾
+
+``` sh
+cd ~/Pictures
+```
+
+然後執行下面指令，就會隨機選取該資料夾的某一張圖片，設定為桌面圖片。
+
+```
+wallpaper-select-feh shuf
+```

@@ -41,6 +41,21 @@ or
 $ wallpaper-select-feh help
 ```
 
+### fzf
+
+``` sh
+cd ~/Pictures
+wallpaper-select-feh fzf
+```
+
+
+### shuf
+
+``` sh
+cd ~/Pictures
+wallpaper-select-feh shuf
+```
+
 
 ### Debug
 

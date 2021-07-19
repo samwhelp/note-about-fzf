@@ -27,7 +27,9 @@ sys_wallpaper_check_dir_exist () {
 	local target="$1"
 
 	if [ "none$target" = "none" ]; then
-		target="/usr/share/backgrounds"
+		##target="/usr/share/backgrounds"
+		##target="."
+		target=$(pwd)
 	fi
 
 	if [ -d "$target" ]; then
@@ -87,9 +89,9 @@ sys_wallpaper_select_cd_dir () {
 
 
 	if ! target="$(sys_wallpaper_check_target_dir_exist $choose)"; then
-		echo "## Dir Not Exist: "
-		echo
-		echo "$choose"
+		util_error_echo "## Dir Not Exist: "
+		util_error_echo
+		util_error_echo "$choose"
 		return 1
 	fi
 
@@ -111,9 +113,9 @@ sys_wallpaper_select_exec_cd_dir () {
 
 
 	if ! target="$(sys_wallpaper_check_target_dir_exist $choose)"; then
-		echo "## Dir Not Exist: "
-		echo
-		echo "$choose"
+		util_error_echo "## Dir Not Exist: "
+		util_error_echo
+		util_error_echo "$choose"
 		return 1
 	fi
 
@@ -140,9 +142,9 @@ sys_wallpaper_select_list_by_dir () {
 
 
 	if ! target="$(sys_wallpaper_check_dir_exist $choose)"; then
-		echo "## Dir Not Exist: "
-		echo
-		echo "$choose"
+		util_error_echo "## Dir Not Exist: "
+		util_error_echo
+		util_error_echo "$choose"
 		return 1
 	fi
 

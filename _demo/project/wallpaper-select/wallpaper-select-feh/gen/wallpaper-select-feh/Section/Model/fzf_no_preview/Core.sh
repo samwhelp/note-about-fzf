@@ -27,9 +27,9 @@ EOF
 
 	local selected=$(sys_wallpaper_select_list_by_dir . | fzf)
 
-	echo
-	echo "## Selected: $selected"
-	echo
+	util_error_echo
+	util_error_echo "## Selected: $selected"
+	util_error_echo
 
 	if [ "none$selected" = "none" ]; then
 		return 1

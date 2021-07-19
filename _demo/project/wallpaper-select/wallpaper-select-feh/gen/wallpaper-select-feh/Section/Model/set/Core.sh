@@ -9,7 +9,12 @@ mod_wallpaper_select_set () {
 	#echo "$@"
 
 
-	## $ wallpaper-select-feh set "/usr/share/backgrounds/xfce/palm-wave.jpg" scale
+	##
+	# ## Example:
+	# $ wallpaper-select-feh set "/usr/share/backgrounds/xfce/palm-wave.jpg"
+	# $ wallpaper-select-feh set "/usr/share/backgrounds/xfce/palm-wave.jpg" scale
+	##
+
 
 	local choose="$1"
 	local option="$2"
@@ -17,9 +22,11 @@ mod_wallpaper_select_set () {
 
 
 	if ! target="$(sys_wallpaper_check_file_exist $choose)"; then
-		echo "## File Not Exist: "
-		echo
-		echo "$choose"
+		util_error_echo
+		util_error_echo "## File Not Exist: "
+		util_error_echo
+		util_error_echo "$choose"
+		util_error_echo
 		return 1
 	fi
 
@@ -27,8 +34,8 @@ mod_wallpaper_select_set () {
 
 	## feh --bg-scale "/usr/share/backgrounds/xfce/palm-wave.jpg"
 
-	echo "## mod_wallpaper_select_set"
-	echo "feh $option $target"
+	util_error_echo "## mod_wallpaper_select_set"
+	util_error_echo "feh $option $target"
 	feh "$option" "$target"
 
 }

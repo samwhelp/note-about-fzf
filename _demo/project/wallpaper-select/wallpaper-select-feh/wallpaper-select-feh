@@ -29,8 +29,12 @@ THE_CMD_FILE_NAME=$(basename $0)
 
 util_debug_echo () {
 	if is_debug; then
-		echo "$@" 1>&2;
+		echo "$@" 1>&2
 	fi
+}
+
+util_error_echo () {
+	echo "$@" 1>&2
 }
 
 ##
@@ -544,7 +548,9 @@ sys_wallpaper_check_dir_exist () {
 	local target="$1"
 
 	if [ "none$target" = "none" ]; then
-		target="/usr/share/backgrounds"
+		##target="/usr/share/backgrounds"
+		##target="."
+		target=$(pwd)
 	fi
 
 	if [ -d "$target" ]; then
@@ -604,9 +610,9 @@ sys_wallpaper_select_cd_dir () {
 
 
 	if ! target="$(sys_wallpaper_check_target_dir_exist $choose)"; then
-		echo "## Dir Not Exist: "
-		echo
-		echo "$choose"
+		util_error_echo "## Dir Not Exist: "
+		util_error_echo
+		util_error_echo "$choose"
 		return 1
 	fi
 
@@ -628,9 +634,9 @@ sys_wallpaper_select_exec_cd_dir () {
 
 
 	if ! target="$(sys_wallpaper_check_target_dir_exist $choose)"; then
-		echo "## Dir Not Exist: "
-		echo
-		echo "$choose"
+		util_error_echo "## Dir Not Exist: "
+		util_error_echo
+		util_error_echo "$choose"
 		return 1
 	fi
 
@@ -657,9 +663,9 @@ sys_wallpaper_select_list_by_dir () {
 
 
 	if ! target="$(sys_wallpaper_check_dir_exist $choose)"; then
-		echo "## Dir Not Exist: "
-		echo
-		echo "$choose"
+		util_error_echo "## Dir Not Exist: "
+		util_error_echo
+		util_error_echo "$choose"
 		return 1
 	fi
 
@@ -881,10 +887,17 @@ mod_wallpaper_select_shuf () {
 	#echo "mod_wallpaper_select_shuf"
 	#echo "$@"
 
-	# wallpaper-select-feh shuf
+	##
+	# ## Example:
+	# $ wallpaper-select-feh shuf
+	# $ wallpaper-select-feh shuf /usr/share/backgrounds
+	# $ wallpaper-select-feh shuf ~/Pictures
+	##
 
-	echo "Todo: mod_wallpaper_select_shuf"
+	local target_dir_path="$1"
+	local target_file_path="$(mod_wallpaper_select_shuf_file_path $target_dir_path)"
 
+	mod_wallpaper_select_set "$target_file_path"
 }
 
 ##
@@ -900,9 +913,36 @@ mod_wallpaper_select_shuf_file_path () {
 	#echo "mod_wallpaper_select_shuf_file_path"
 	#echo "$@"
 
-	# wallpaper-select-feh shuf_file_path
+	##
+	# ## Example:
+	# $ wallpaper-select-feh shuf_file_path
+	# $ wallpaper-select-feh shuf_file_path /usr/share/backgrounds
+	# $ wallpaper-select-feh shuf_file_path ~/Pictures
+	##
 
-	echo "Todo: mod_wallpaper_select_shuf_file_path"
+	local choose_dir_path="$1"
+	local target_dir_path
+
+	if [ "none" = "none$choose_dir_path" ]; then
+		choose_dir_path=$(pwd)
+	fi
+
+
+	if ! target_dir_path="$(sys_wallpaper_check_dir_exist $choose_dir_path)"; then
+		util_error_echo
+		util_error_echo "## Dir Not Exist: "
+		util_error_echo
+		util_error_echo "$choose_dir_path"
+		util_error_echo
+		return 1
+	fi
+
+
+	local target_file_name="$(mod_wallpaper_select_list $target_dir_path | shuf -n 1)"
+	local target_file_path="$target_dir_path/$target_file_name"
+
+
+	echo "$target_file_path"
 
 }
 
@@ -954,10 +994,10 @@ EOF
 
 	local selected=$(sys_wallpaper_select_list_by_dir . | fzf --preview "$preview_app {}" --preview-window "$PREVIEW_SIDE:50%:noborder:wrap")
 
-	echo
-	echo "## Selected: $selected"
+	util_error_echo
+	util_error_echo "## Selected: $selected"
 	sys_fzf_wallpaper_preview_image_remove
-	echo
+	util_error_echo
 
 	if [ "none$selected" = "none" ]; then
 		return 1
@@ -1006,9 +1046,9 @@ EOF
 
 	local selected=$(sys_wallpaper_select_list_by_dir . | fzf)
 
-	echo
-	echo "## Selected: $selected"
-	echo
+	util_error_echo
+	util_error_echo "## Selected: $selected"
+	util_error_echo
 
 	if [ "none$selected" = "none" ]; then
 		return 1
@@ -1065,31 +1105,40 @@ mod_wallpaper_select_list () {
 	#echo "mod_wallpaper_select_list"
 	#echo "$@"
 
-	## wallpaper-select-feh list
-	## wallpaper-select-feh list /usr/share/backgrounds
-	local file_name=''
 
-	local choose="$1"
-	local target
+	##
+	# ## Example:
+	# $ wallpaper-select-feh list
+	# $ wallpaper-select-feh list /usr/share/backgrounds
+	# $ wallpaper-select-feh list ~/Pictures
+	##
 
 
-	if ! target="$(sys_wallpaper_check_dir_exist $choose)"; then
-		echo "## Dir Not Exist: "
-		echo
-		echo "$choose"
+	local target_file_name=''
+
+	local choose_dir_path="$1"
+	local target_dir_path
+
+
+	if ! target_dir_path="$(sys_wallpaper_check_dir_exist $choose_dir_path)"; then
+		util_error_echo
+		util_error_echo "## Dir Not Exist: "
+		util_error_echo
+		util_error_echo "$choose_dir_path"
+		util_error_echo
 		return 1
 	fi
 
-	cd "$target"
+	cd "$target_dir_path"
 
 
-	for file_name in $(ls ./ -1); do
-	#for name in *; do
-		if [ -d "$file_name" ]; then
+	for target_file_name in $(ls ./ -1); do
+	#for target_file_name in *; do
+		if [ -d "$target_file_name" ]; then
 			continue;
 		fi
 
-		echo $file_name;
+		echo $target_file_name;
 	done
 
 	cd "$OLDPWD"
@@ -1129,7 +1178,12 @@ mod_wallpaper_select_set () {
 	#echo "$@"
 
 
-	## $ wallpaper-select-feh set "/usr/share/backgrounds/xfce/palm-wave.jpg" scale
+	##
+	# ## Example:
+	# $ wallpaper-select-feh set "/usr/share/backgrounds/xfce/palm-wave.jpg"
+	# $ wallpaper-select-feh set "/usr/share/backgrounds/xfce/palm-wave.jpg" scale
+	##
+
 
 	local choose="$1"
 	local option="$2"
@@ -1137,9 +1191,11 @@ mod_wallpaper_select_set () {
 
 
 	if ! target="$(sys_wallpaper_check_file_exist $choose)"; then
-		echo "## File Not Exist: "
-		echo
-		echo "$choose"
+		util_error_echo
+		util_error_echo "## File Not Exist: "
+		util_error_echo
+		util_error_echo "$choose"
+		util_error_echo
 		return 1
 	fi
 
@@ -1147,8 +1203,8 @@ mod_wallpaper_select_set () {
 
 	## feh --bg-scale "/usr/share/backgrounds/xfce/palm-wave.jpg"
 
-	echo "## mod_wallpaper_select_set"
-	echo "feh $option $target"
+	util_error_echo "## mod_wallpaper_select_set"
+	util_error_echo "feh $option $target"
 	feh "$option" "$target"
 
 }
@@ -1343,8 +1399,12 @@ Example:
 	## shuf
 
 		$ $cmd_name shuf
+		$ $cmd_name shuf /usr/share/backgrounds
+		$ $cmd_name shuf ~/Pictures
 
 		$ $cmd_name shuf_file_path
+		$ $cmd_name shuf_file_path /usr/share/backgrounds
+		$ $cmd_name shuf_file_path ~/Pictures
 
 	## fzf
 
@@ -1359,6 +1419,8 @@ Example:
 		$ $cmd_name default
 
 		$ $cmd_name list
+		$ $cmd_name list /usr/share/backgrounds
+		$ $cmd_name list ~/Pictures
 
 		$ $cmd_name get
 
