@@ -29,7 +29,7 @@
 
 | 議題 |
 | --- |
-| [專案](https://samwhelp.github.io/note-about-fzf/read/project.html) |
+| [專案列表](https://samwhelp.github.io/note-about-fzf/read/project.html) |
 | [wallpaper-select-feh](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-feh.html) |
 
 
