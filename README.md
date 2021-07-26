@@ -21,6 +21,8 @@
 | 議題 |
 | --- |
 | [預覽](https://samwhelp.github.io/note-about-fzf/read/start/preview/) |
+| [預覽圖片](https://samwhelp.github.io/note-about-fzf/read/start/preview/image.html) |
+
 
 
 ### 專案
