@@ -1,7 +1,7 @@
 
 
 ################################################################################
-### Head: Util_Self_Update
+### Head: Util / SelfUpdate
 ##
 
 util_make_bin_dir () {
@@ -94,5 +94,5 @@ util_self_actions () {
 }
 
 ##
-### Tail: Util_Self_Update
+### Tail: Util / SelfUpdate
 ################################################################################
