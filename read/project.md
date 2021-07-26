@@ -34,7 +34,7 @@ has_children: true
 
 | 專案 | 指令 |
 | --- | --- |
-| [awesomewmrc-get](https://samwhelp.github.io/note-about-awesome-wm/read/project/awesomewmrc-profile/awesomewmrc-get) | `awesomewmrc-get fzf` |
+| [awesomewmrc-get](https://samwhelp.github.io/note-about-awesome-wm/read/project/awesomewmrc-profile/awesomewmrc-get.html) | `awesomewmrc-get fzf` |
 | [awesomewmrc-ctrl](https://samwhelp.github.io/note-about-awesome-wm/read/project/awesomewmrc-profile/awesomewmrc-ctrl.html) | `awesomewmrc-ctrl fzf` |
 
 
@@ -42,5 +42,12 @@ has_children: true
 
 | 專案 | 指令 |
 | --- | --- |
-| [leftwmrc-theme-get](https://samwhelp.github.io/note-about-leftwm/read/project/leftwmrc-profile/leftwmrc-theme-get) | `leftwmrc-theme-get fzf` |
+| [leftwmrc-theme-get](https://samwhelp.github.io/note-about-leftwm/read/project/leftwmrc-profile/leftwmrc-theme-get.html) | `leftwmrc-theme-get fzf` |
 | [leftwmrc-theme-ctrl](https://samwhelp.github.io/note-about-leftwm/read/project/leftwmrc-profile/leftwmrc-theme-ctrl.html) | `leftwmrc-theme-ctrl fzf` |
+
+## Spectrwm
+
+| 專案 | 指令 |
+| --- | --- |
+| [spectrwmrc-get](https://samwhelp.github.io/note-about-spectrwm/read/project/spectrwmrc-profile/spectrwmrc-get.html) | `spectrwmrc-get fzf` |
+| [spectrwmrc-ctrl](https://samwhelp.github.io/note-about-spectrwm/read/project/spectrwmrc-profile/spectrwmrc-ctrl.html) | `spectrwmrc-ctrl fzf` |
