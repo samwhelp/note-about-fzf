@@ -10,7 +10,11 @@ mod_wallpaper_select_get () {
 
 	# wallpaper-select-feh get
 
-	echo "Todo: mod_wallpaper_select_get"
+	if ! [ -e "$HOME/.fehbg" ]; then
+		return 0
+	fi
+
+	grep '^feh' "$HOME/.fehbg" | awk '{print $4}' | awk -F "'" '{print $2}'
 
 }
 
