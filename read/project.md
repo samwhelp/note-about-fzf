@@ -46,6 +46,12 @@ has_children: true
 | [bspwmrc-ctrl](https://samwhelp.github.io/note-about-bspwm/read/project/bspwmrc-profile/bspwmrc-ctrl.html) | `bspwmrc-ctrl fzf` |
 
 
+| 專案 | 指令 |
+| --- | --- |
+| [sxhkdrc-get](https://samwhelp.github.io/note-about-bspwm/read/project/sxhkdrc-profile/sxhkdrc-get.html) | `sxhkdrc-get fzf` |
+| [sxhkdrc-ctrl](https://samwhelp.github.io/note-about-bspwm/read/project/sxhkdrc-profile/sxhkdrc-ctrl.html) | `sxhkdrc-ctrl fzf` |
+
+
 ## Awesomewm
 
 | 專案 | 指令 |
