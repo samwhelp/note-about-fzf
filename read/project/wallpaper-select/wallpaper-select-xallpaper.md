@@ -24,6 +24,11 @@ grand_parent: 專案
 * [opset-wallpaper-xwallpaper](https://samwhelp.github.io/note-about-wallpaper/read/project/opset-wallpaper/opset-wallpaper-xwallpaper.html)
 
 
+## 相關筆記
+
+* manjaro 探索筆記 / [xwallpaper](https://samwhelp.github.io/note-about-manjaro/read/adjustment/tool/xwallpaper.html)
+
+
 ## 使用範例
 
 ### fzf

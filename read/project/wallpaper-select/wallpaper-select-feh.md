@@ -23,6 +23,10 @@ grand_parent: 專案
 * [opset-wallpaper-feh](https://samwhelp.github.io/note-about-wallpaper/read/project/opset-wallpaper/opset-wallpaper-feh.html)
 
 
+## 相關筆記
+
+* manjaro 探索筆記 / [feh](https://samwhelp.github.io/note-about-manjaro/read/adjustment/tool/feh.html)
+
 ## 使用範例
 
 ### fzf

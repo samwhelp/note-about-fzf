@@ -24,6 +24,11 @@ grand_parent: 專案
 * [opset-wallpaper-hsetroot](https://samwhelp.github.io/note-about-wallpaper/read/project/opset-wallpaper/opset-wallpaper-hsetroot.html)
 
 
+## 相關筆記
+
+* manjaro 探索筆記 / [hsetroot](https://samwhelp.github.io/note-about-manjaro/read/adjustment/tool/hsetroot.html)
+
+
 
 ## 使用範例
 
