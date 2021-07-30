@@ -1,21 +1,22 @@
 ---
-title: wallpaper-select-feh
-nav_order: 8011
+title: wallpaper-select-xwallpaper
+nav_order: 8013
 has_children: false
 parent: wallpaper-select
 grand_parent: 專案
 ---
 
-# wallpaper-select-feh
+# wallpaper-select-xwallpaper
 
 
 ## 專案連結
 
-* [wallpaper-select-feh](https://github.com/samwhelp/note-about-fzf/tree/gh-pages/_demo/project/wallpaper-select/wallpaper-select-feh)
+* [wallpaper-select-xwallpaper](https://github.com/samwhelp/note-about-fzf/tree/gh-pages/_demo/project/wallpaper-select/wallpaper-select-xwallpaper)
+
 
 ## 採用工具
 
-* [feh](https://feh.finalrewind.org/) ([GitHub](https://github.com/derf/feh))
+* [xwallpaper](https://github.com/stoeckmann/xwallpaper)
 
 
 ## 使用範例
@@ -31,7 +32,7 @@ cd ~/Pictures
 然後執行下面指令，就會顯示該資料夾所有圖片列表，當作是選項，提供給您做選擇。
 
 ```
-wallpaper-select-feh fzf
+wallpaper-select-xwallpaper fzf
 ```
 
 
@@ -46,5 +47,5 @@ cd ~/Pictures
 然後執行下面指令，就會隨機選取該資料夾的某一張圖片，設定為桌面圖片。
 
 ```
-wallpaper-select-feh shuf
+wallpaper-select-xwallpaper shuf
 ```

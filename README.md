@@ -29,8 +29,10 @@
 
 | 議題 |
 | --- |
-| [專案列表](https://samwhelp.github.io/note-about-fzf/read/project.html) |
+| [應用fzf專案列表](https://samwhelp.github.io/note-about-fzf/read/project.html) |
 | [wallpaper-select-feh](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-feh.html) |
+| [wallpaper-select-hsetroot](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-hsetroot.html) |
+| [wallpaper-select-xwallpaper](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-xwallpaper.html) |
 
 
 ### 安裝

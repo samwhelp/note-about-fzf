@@ -15,4 +15,8 @@ parent: 專案
 
 ## 工具
 
-* [wallpaper-select-feh](wallpaper-select-feh)
+| 工具 |
+| --- |
+| [wallpaper-select-feh](wallpaper-select-feh) |
+| [wallpaper-select-hsetroot](wallpaper-select-hsetroot) |
+| [wallpaper-select-xwallpaper](wallpaper-select-xwallpaper) |
