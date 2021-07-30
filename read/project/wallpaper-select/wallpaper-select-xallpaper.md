@@ -19,6 +19,11 @@ grand_parent: 專案
 * [xwallpaper](https://github.com/stoeckmann/xwallpaper)
 
 
+## 其他專案
+
+* [opset-wallpaper-xwallpaper](https://samwhelp.github.io/note-about-wallpaper/read/project/opset-wallpaper/opset-wallpaper-xwallpaper.html)
+
+
 ## 使用範例
 
 ### fzf

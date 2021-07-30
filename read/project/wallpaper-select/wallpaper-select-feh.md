@@ -18,6 +18,11 @@ grand_parent: 專案
 * [feh](https://feh.finalrewind.org/) ([GitHub](https://github.com/derf/feh))
 
 
+## 其他專案
+
+* [opset-wallpaper-feh](https://samwhelp.github.io/note-about-wallpaper/read/project/opset-wallpaper/opset-wallpaper-feh.html)
+
+
 ## 使用範例
 
 ### fzf

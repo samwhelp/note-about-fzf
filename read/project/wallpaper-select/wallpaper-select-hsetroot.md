@@ -19,6 +19,12 @@ grand_parent: 專案
 * [hsetroot](https://github.com/himdel/hsetroot)
 
 
+## 其他專案
+
+* [opset-wallpaper-hsetroot](https://samwhelp.github.io/note-about-wallpaper/read/project/opset-wallpaper/opset-wallpaper-hsetroot.html)
+
+
+
 ## 使用範例
 
 ### fzf
