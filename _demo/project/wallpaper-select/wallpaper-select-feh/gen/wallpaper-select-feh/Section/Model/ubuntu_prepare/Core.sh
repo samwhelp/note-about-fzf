@@ -17,7 +17,7 @@ mod_wallpaper_select_ubuntu_prepare () {
 
 mod_wallpaper_select_ubuntu_prepare_install_package () {
 
-	echo "Todo: mod_wallpaper_select_ubuntu_prepare_install_package"
+	util_error_echo "Todo: mod_wallpaper_select_ubuntu_prepare_install_package"
 
 	#echo "sudo apt-get install feh fzf ueberzug"
 	#sudo apt-get install feh fzf ueberzug

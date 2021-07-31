@@ -19,7 +19,7 @@ mod_wallpaper_select_shuf_file_path () {
 	local target_dir_path
 
 	if [ "none" = "none$choose_dir_path" ]; then
-		choose_dir_path=$(pwd)
+		choose_dir_path="$(pwd)"
 	fi
 
 

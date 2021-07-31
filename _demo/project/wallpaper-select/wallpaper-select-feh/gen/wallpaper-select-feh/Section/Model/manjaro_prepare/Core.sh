@@ -17,7 +17,7 @@ mod_wallpaper_select_manjaro_prepare () {
 
 mod_wallpaper_select_manjaro_prepare_install_package () {
 
-	echo "pamac install feh fzf ueberzug"
+	util_error_echo "pamac install feh fzf ueberzug"
 	pamac install feh fzf ueberzug
 
 }

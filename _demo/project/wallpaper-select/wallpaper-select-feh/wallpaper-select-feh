@@ -409,6 +409,7 @@ sys_fzf_wallpaper_preview_text () {
 
 	echo
 	printf "## Info\n"
+	echo
 	printf "File: %s\n" "$file_name"
 	printf "Dir: %s\n" "$dir_path"
 	printf "Path: %s\n" "$dir_path/$file_name"
@@ -416,8 +417,8 @@ sys_fzf_wallpaper_preview_text () {
 }
 
 sys_fzf_wallpaper_preview_image_remove () {
-	echo
-	echo "## sys_fzf_wallpaper_preview_image_remove"
+	util_error_echo
+	util_error_echo "## sys_fzf_wallpaper_preview_image_remove"
 
 	local thumb_id="wallpaper"
 
@@ -478,18 +479,18 @@ sys_fzf_wallpaper_preview_main () {
 
 sys_ueberzug_ipc_start () {
 
-	echo
-	echo '## sys_ueberzug_ipc_start'
+	util_error_echo
+	util_error_echo '## sys_ueberzug_ipc_start'
 
 	## THE_UEBERZUG_CTRL="/tmp/ueberzug-ctrl"
 
 	if [ -e "$THE_UEBERZUG_CTRL" ]; then
-		echo "rm -f $THE_UEBERZUG_CTRL"
+		util_error_echo "rm -f $THE_UEBERZUG_CTRL"
 		rm -f "$THE_UEBERZUG_CTRL"
 		#return 0
 	fi
 
-	echo "mkfifo $THE_UEBERZUG_CTRL"
+	util_error_echo "mkfifo $THE_UEBERZUG_CTRL"
 	mkfifo "$THE_UEBERZUG_CTRL"
 
 	if [ -e "$THE_UEBERZUG_CTRL" ]; then
@@ -502,10 +503,11 @@ sys_ueberzug_ipc_start () {
 }
 
 sys_ueberzug_ipc_stop () {
-	echo
-	echo '## sys_ueberzug_ipc_stop'
+	util_error_echo
+	util_error_echo '## sys_ueberzug_ipc_stop'
+
 	if [ -e "$THE_UEBERZUG_CTRL" ]; then
-		echo "rm -f $THE_UEBERZUG_CTRL"
+		util_error_echo "rm -f $THE_UEBERZUG_CTRL"
 		rm -f "$THE_UEBERZUG_CTRL"
 		#return 0
 	fi
@@ -513,16 +515,19 @@ sys_ueberzug_ipc_stop () {
 
 
 sys_ueberzug_app_start () {
-	echo
-	echo '## sys_ueberzug_app_start'
+
+	util_error_echo
+	util_error_echo '## sys_ueberzug_app_start'
+
+	util_error_echo "ueberzug layer --silent --parser json < $THE_UEBERZUG_CTRL &"
 	ueberzug layer --silent --parser json < "$THE_UEBERZUG_CTRL" &
-	echo "ueberzug layer --silent --parser json < $THE_UEBERZUG_CTRL &"
+
 	exec 3>"$THE_UEBERZUG_CTRL"
 }
 
 sys_ueberzug_app_stop () {
-	echo
-	echo '## sys_ueberzug_app_stop'
+	util_error_echo
+	util_error_echo '## sys_ueberzug_app_stop'
 	exec 3>&-
 }
 
@@ -762,7 +767,7 @@ mod_wallpaper_select_manjaro_prepare () {
 
 mod_wallpaper_select_manjaro_prepare_install_package () {
 
-	echo "pamac install feh fzf ueberzug"
+	util_error_echo "pamac install feh fzf ueberzug"
 	pamac install feh fzf ueberzug
 
 }
@@ -797,7 +802,7 @@ mod_wallpaper_select_ubuntu_prepare () {
 
 mod_wallpaper_select_ubuntu_prepare_install_package () {
 
-	echo "Todo: mod_wallpaper_select_ubuntu_prepare_install_package"
+	util_error_echo "Todo: mod_wallpaper_select_ubuntu_prepare_install_package"
 
 	#echo "sudo apt-get install feh fzf ueberzug"
 	#sudo apt-get install feh fzf ueberzug
@@ -978,7 +983,7 @@ mod_wallpaper_select_shuf_file_path () {
 	local target_dir_path
 
 	if [ "none" = "none$choose_dir_path" ]; then
-		choose_dir_path=$(pwd)
+		choose_dir_path="$(pwd)"
 	fi
 
 
@@ -1027,26 +1032,27 @@ mod_fzf_app_start () {
 
 	if ! is_command_exist 'fzf'; then
 
-cat << EOF
+		util_error_echo '## Need: fzf'
+		util_error_echo '# * https://github.com/junegunn/fzf'
+		util_error_echo
+		util_error_echo '## Manjaro Install:'
+		util_error_echo '# $ pamac install fzf'
+		util_error_echo
+		util_error_echo '## Ubuntu Install:'
+		util_error_echo '# $ sudo apt-get install fzf'
+		util_error_echo
 
-## Need: fzf
-
-	* https://github.com/junegunn/fzf
-
-	$ pamac install fzf
-
-EOF
 		return 1
 	fi
 
 
 	PREVIEW_SIDE="left"
 
-	export THE_CWD_PATH=$(pwd)
+	export THE_CWD_PATH="$(pwd)"
 
 	local preview_app="$0 _fzf_preview_area"
 
-	local selected=$(sys_wallpaper_select_list_by_dir . | fzf --preview "$preview_app {}" --preview-window "$PREVIEW_SIDE:50%:noborder:wrap")
+	local selected="$(sys_wallpaper_select_list_by_dir . | fzf --preview "$preview_app {}" --preview-window "$PREVIEW_SIDE:50%:noborder:wrap")"
 
 	util_error_echo
 	util_error_echo "## Selected: $selected"
@@ -1083,22 +1089,23 @@ mod_fzf_no_preview () {
 
 	if ! is_command_exist 'fzf'; then
 
-cat << EOF
+		util_error_echo '## Need: fzf'
+		util_error_echo '# * https://github.com/junegunn/fzf'
+		util_error_echo
+		util_error_echo '## Manjaro Install:'
+		util_error_echo '# $ pamac install fzf'
+		util_error_echo
+		util_error_echo '## Ubuntu Install:'
+		util_error_echo '# $ sudo apt-get install fzf'
+		util_error_echo
 
-## Need: fzf
-
-	* https://github.com/junegunn/fzf
-
-	$ pamac install fzf
-
-EOF
 		return 1
 	fi
 
 
 
 
-	local selected=$(sys_wallpaper_select_list_by_dir . | fzf)
+	local selected="$(sys_wallpaper_select_list_by_dir . | fzf)"
 
 	util_error_echo
 	util_error_echo "## Selected: $selected"

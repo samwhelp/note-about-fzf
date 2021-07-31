@@ -22,26 +22,27 @@ mod_fzf_app_start () {
 
 	if ! is_command_exist 'fzf'; then
 
-cat << EOF
+		util_error_echo '## Need: fzf'
+		util_error_echo '# * https://github.com/junegunn/fzf'
+		util_error_echo
+		util_error_echo '## Manjaro Install:'
+		util_error_echo '# $ pamac install fzf'
+		util_error_echo
+		util_error_echo '## Ubuntu Install:'
+		util_error_echo '# $ sudo apt-get install fzf'
+		util_error_echo
 
-## Need: fzf
-
-	* https://github.com/junegunn/fzf
-
-	$ pamac install fzf
-
-EOF
 		return 1
 	fi
 
 
 	PREVIEW_SIDE="left"
 
-	export THE_CWD_PATH=$(pwd)
+	export THE_CWD_PATH="$(pwd)"
 
 	local preview_app="$0 _fzf_preview_area"
 
-	local selected=$(sys_wallpaper_select_list_by_dir . | fzf --preview "$preview_app {}" --preview-window "$PREVIEW_SIDE:50%:noborder:wrap")
+	local selected="$(sys_wallpaper_select_list_by_dir . | fzf --preview "$preview_app {}" --preview-window "$PREVIEW_SIDE:50%:noborder:wrap")"
 
 	util_error_echo
 	util_error_echo "## Selected: $selected"

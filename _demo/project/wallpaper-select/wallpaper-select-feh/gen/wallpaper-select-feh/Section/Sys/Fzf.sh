@@ -11,6 +11,7 @@ sys_fzf_wallpaper_preview_text () {
 
 	echo
 	printf "## Info\n"
+	echo
 	printf "File: %s\n" "$file_name"
 	printf "Dir: %s\n" "$dir_path"
 	printf "Path: %s\n" "$dir_path/$file_name"
@@ -18,8 +19,8 @@ sys_fzf_wallpaper_preview_text () {
 }
 
 sys_fzf_wallpaper_preview_image_remove () {
-	echo
-	echo "## sys_fzf_wallpaper_preview_image_remove"
+	util_error_echo
+	util_error_echo "## sys_fzf_wallpaper_preview_image_remove"
 
 	local thumb_id="wallpaper"
 
