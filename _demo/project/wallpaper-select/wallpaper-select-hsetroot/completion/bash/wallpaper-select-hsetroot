@@ -1,0 +1,18 @@
+
+## /usr/local/share/bash-completion/completions/wallpaper-select-hsetroot
+## $ sudo install -Dm644 ./wallpaper-select-hsetroot /usr/local/share/bash-completion/completions/wallpaper-select-hsetroot
+
+_wallpaper_select_hsetroot () {
+
+	local cur prev words cword
+	_init_completion || return
+
+	if [ "$cword" = "1" ]; then
+		local action_list=$(DEBUG_WALLPAPER_SELECT=false wallpaper-select-hsetroot self_actions)
+		COMPREPLY=( $( compgen -W "$action_list" -- "$cur" ) )
+	fi
+
+	return 0
+}
+
+complete -F _wallpaper_select_hsetroot wallpaper-select-hsetroot
