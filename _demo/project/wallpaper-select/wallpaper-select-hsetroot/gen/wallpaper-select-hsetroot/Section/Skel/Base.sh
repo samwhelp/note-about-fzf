@@ -93,7 +93,7 @@ base_var_init () {
 	THE_UEBERZUG_CTRL="/tmp/ueberzug-ctrl"
 
 	## hsetroot
-	THE_FEH_BG_OPTION_LIST="cover center tile full extend fill"
+	THE_HSETROOT_BG_OPTION_LIST="cover center tile full extend fill"
 
 	## wallpaper
 	THE_WALLPAPER_DEFAULT_FILE_PATH="/usr/share/backgrounds/xfce/palm-wave.jpg"
@@ -159,7 +159,7 @@ base_var_dump () {
 	util_debug_echo "THE_UEBERZUG_CTRL=$THE_UEBERZUG_CTRL"
 
 	## hsetroot
-	util_debug_echo "THE_FEH_BG_OPTION_LIST=$THE_FEH_BG_OPTION_LIST"
+	util_debug_echo "THE_HSETROOT_BG_OPTION_LIST=$THE_HSETROOT_BG_OPTION_LIST"
 
 	## wallpaper
 	util_debug_echo "THE_WALLPAPER_DEFAULT_FILE_PATH=$THE_WALLPAPER_DEFAULT_FILE_PATH"

@@ -116,7 +116,7 @@ base_var_init () {
 	THE_UEBERZUG_CTRL="/tmp/ueberzug-ctrl"
 
 	## hsetroot
-	THE_FEH_BG_OPTION_LIST="cover center tile full extend fill"
+	THE_HSETROOT_BG_OPTION_LIST="cover center tile full extend fill"
 
 	## wallpaper
 	THE_WALLPAPER_DEFAULT_FILE_PATH="/usr/share/backgrounds/xfce/palm-wave.jpg"
@@ -182,7 +182,7 @@ base_var_dump () {
 	util_debug_echo "THE_UEBERZUG_CTRL=$THE_UEBERZUG_CTRL"
 
 	## hsetroot
-	util_debug_echo "THE_FEH_BG_OPTION_LIST=$THE_FEH_BG_OPTION_LIST"
+	util_debug_echo "THE_HSETROOT_BG_OPTION_LIST=$THE_HSETROOT_BG_OPTION_LIST"
 
 	## wallpaper
 	util_debug_echo "THE_WALLPAPER_DEFAULT_FILE_PATH=$THE_WALLPAPER_DEFAULT_FILE_PATH"
@@ -552,7 +552,7 @@ sys_ueberzug_ses_stop () {
 
 sys_hsetroot_find_bg_option_list () {
 
-	local list="$THE_FEH_BG_OPTION_LIST"
+	local list="$THE_HSETROOT_BG_OPTION_LIST"
 
 	for allow in $list; do
 		echo "$allow"
@@ -562,7 +562,7 @@ sys_hsetroot_find_bg_option_list () {
 
 sys_hsetroot_find_bg_option () {
 	local option="$1"
-	local list="$THE_FEH_BG_OPTION_LIST"
+	local list="$THE_HSETROOT_BG_OPTION_LIST"
 
 	for allow in $list; do
 		if [ "select_$allow" = "select_$option" ]; then
