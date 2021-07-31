@@ -12,6 +12,8 @@ has_children: true
 | 專案 | 指令 |
 | --- | --- |
 | [wallpaper-select-feh](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-feh) | `wallpaper-select-feh fzf` |
+| [wallpaper-select-hsetroot](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-hsetroot) | `wallpaper-select-hsetroot fzf` |
+| [wallpaper-select-xwallpaper](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-xwallpaper) | `wallpaper-select-xwallpaper fzf` |
 
 
 ## Vim
