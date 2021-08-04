@@ -117,6 +117,9 @@ base_var_init () {
 
 	## xfce
 	THE_XFCE_BG_OPTION_LIST="0 1 2 3 4 5"
+	declare -g -A THE_XFCE_BG_OPTION_MAP=([none]=0 [center]=1 [tile]=2 [stretch]=3 [scale]=4 [zoom]=5)
+	##echo  ${THE_XFCE_BG_OPTION_MAP[zoomed]}
+
 
 	## wallpaper
 	THE_WALLPAPER_DEFAULT_FILE_PATH="/usr/share/backgrounds/xfce/palm-wave.jpg"
@@ -600,8 +603,17 @@ sys_xfce_find_bg_option_list () {
 
 }
 
+
+
+sys_xfce_map_bg_option () {
+	local key="$1"
+	echo "${THE_XFCE_BG_OPTION_MAP[$key]}"
+}
+
 sys_xfce_find_bg_option () {
 	local option="$1"
+	option="$(sys_xfce_map_bg_option "$option")"
+
 	local list="$THE_XFCE_BG_OPTION_LIST"
 
 	for allow in $list; do
@@ -1300,9 +1312,8 @@ mod_wallpaper_select_set () {
 		return 1
 	fi
 
-	option="$(sys_xfce_find_bg_option $option)"
 
-	echo "$option"
+	option="$(sys_xfce_find_bg_option $option)"
 
 	## sys_xfce_set_wallpaper "/usr/share/backgrounds/xfce/palm-wave.jpg"
 
@@ -1528,7 +1539,12 @@ Example:
 		$ $cmd_name get
 
 		$ $cmd_name set "/usr/share/backgrounds/xfce/palm-wave.jpg"
+		$ $cmd_name set "/usr/share/backgrounds/xfce/palm-wave.jpg" none
+		$ $cmd_name set "/usr/share/backgrounds/xfce/palm-wave.jpg" center
+		$ $cmd_name set "/usr/share/backgrounds/xfce/palm-wave.jpg" tile
+		$ $cmd_name set "/usr/share/backgrounds/xfce/palm-wave.jpg" stretch
 		$ $cmd_name set "/usr/share/backgrounds/xfce/palm-wave.jpg" scale
+		$ $cmd_name set "/usr/share/backgrounds/xfce/palm-wave.jpg" zoom
 
 
 Debug:

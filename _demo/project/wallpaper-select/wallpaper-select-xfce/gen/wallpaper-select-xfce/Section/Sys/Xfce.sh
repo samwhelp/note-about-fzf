@@ -54,8 +54,17 @@ sys_xfce_find_bg_option_list () {
 
 }
 
+
+
+sys_xfce_map_bg_option () {
+	local key="$1"
+	echo "${THE_XFCE_BG_OPTION_MAP[$key]}"
+}
+
 sys_xfce_find_bg_option () {
 	local option="$1"
+	option="$(sys_xfce_map_bg_option "$option")"
+
 	local list="$THE_XFCE_BG_OPTION_LIST"
 
 	for allow in $list; do

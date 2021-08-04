@@ -94,6 +94,9 @@ base_var_init () {
 
 	## xfce
 	THE_XFCE_BG_OPTION_LIST="0 1 2 3 4 5"
+	declare -g -A THE_XFCE_BG_OPTION_MAP=([none]=0 [center]=1 [tile]=2 [stretch]=3 [scale]=4 [zoom]=5)
+	##echo  ${THE_XFCE_BG_OPTION_MAP[zoomed]}
+
 
 	## wallpaper
 	THE_WALLPAPER_DEFAULT_FILE_PATH="/usr/share/backgrounds/xfce/palm-wave.jpg"
