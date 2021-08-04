@@ -33,7 +33,7 @@
 | [wallpaper-select-feh](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-feh.html) |
 | [wallpaper-select-hsetroot](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-hsetroot.html) |
 | [wallpaper-select-xwallpaper](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-xwallpaper.html) |
-
+| [wallpaper-select-xfce](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-xfce.html) |
 
 ### 安裝
 

@@ -20,3 +20,4 @@ parent: 專案
 | [wallpaper-select-feh](wallpaper-select-feh) |
 | [wallpaper-select-hsetroot](wallpaper-select-hsetroot) |
 | [wallpaper-select-xwallpaper](wallpaper-select-xwallpaper) |
+| [wallpaper-select-xfce](wallpaper-select-xfce) |
