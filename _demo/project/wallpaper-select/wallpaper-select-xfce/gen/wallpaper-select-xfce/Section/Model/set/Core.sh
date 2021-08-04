@@ -30,13 +30,15 @@ mod_wallpaper_select_set () {
 		return 1
 	fi
 
-	##option="$(sys_xfce_find_bg_option $option)"
+	option="$(sys_xfce_find_bg_option $option)"
+
+	echo "$option"
 
 	## sys_xfce_set_wallpaper "/usr/share/backgrounds/xfce/palm-wave.jpg"
 
 	util_error_echo "## mod_wallpaper_select_set"
-	util_error_echo "sys_xfce_set_wallpaper $target"
-	sys_xfce_wallpaper_set "$target"
+	util_error_echo "sys_xfce_set_wallpaper $target $option"
+	sys_xfce_wallpaper_set "$target" "$option"
 
 }
 

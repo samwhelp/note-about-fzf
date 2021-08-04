@@ -116,7 +116,7 @@ base_var_init () {
 	THE_UEBERZUG_CTRL="/tmp/ueberzug-ctrl"
 
 	## xfce
-	THE_XFCE_BG_OPTION_LIST="cover center tile full extend fill"
+	THE_XFCE_BG_OPTION_LIST="0 1 2 3 4 5"
 
 	## wallpaper
 	THE_WALLPAPER_DEFAULT_FILE_PATH="/usr/share/backgrounds/xfce/palm-wave.jpg"
@@ -554,6 +554,7 @@ sys_ueberzug_ses_stop () {
 sys_xfce_wallpaper_set () {
 
 	local file_path="$1"
+	local bg_option="$2"
 	local screen=`xrandr --listactivemonitors | awk -F ' ' 'END {print $1}' | tr -d \:`
 	local monitor=`xrandr --listactivemonitors | awk -F ' ' 'END {print $2}' | tr -d \*+`
 
@@ -563,8 +564,8 @@ sys_xfce_wallpaper_set () {
 	util_error_echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen${screen}/monitor${monitor}/workspace0/last-image --set $file_path"
 	xfconf-query --channel xfce4-desktop --property "/backdrop/screen${screen}/monitor${monitor}/workspace0/last-image" --set "$file_path"
 
-	util_error_echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen${screen}/monitor${monitor}/workspace0/image-style --set 5"
-	xfconf-query --channel xfce4-desktop --property "/backdrop/screen${screen}/monitor${monitor}/workspace0/image-style" --set "5"
+	util_error_echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen${screen}/monitor${monitor}/workspace0/image-style --set $bg_option"
+	xfconf-query --channel xfce4-desktop --property "/backdrop/screen${screen}/monitor${monitor}/workspace0/image-style" --set "$bg_option"
 	##
 	## ## image-style
 	## 0: None
@@ -605,12 +606,12 @@ sys_xfce_find_bg_option () {
 
 	for allow in $list; do
 		if [ "select_$allow" = "select_$option" ]; then
-			echo "-$option"
+			echo "$option"
 			return
 		fi
 	done
 
-	echo '-cover'
+	echo '5'
 }
 
 
@@ -1299,13 +1300,15 @@ mod_wallpaper_select_set () {
 		return 1
 	fi
 
-	##option="$(sys_xfce_find_bg_option $option)"
+	option="$(sys_xfce_find_bg_option $option)"
+
+	echo "$option"
 
 	## sys_xfce_set_wallpaper "/usr/share/backgrounds/xfce/palm-wave.jpg"
 
 	util_error_echo "## mod_wallpaper_select_set"
-	util_error_echo "sys_xfce_set_wallpaper $target"
-	sys_xfce_wallpaper_set "$target"
+	util_error_echo "sys_xfce_set_wallpaper $target $option"
+	sys_xfce_wallpaper_set "$target" "$option"
 
 }
 

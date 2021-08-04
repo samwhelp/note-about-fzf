@@ -93,7 +93,7 @@ base_var_init () {
 	THE_UEBERZUG_CTRL="/tmp/ueberzug-ctrl"
 
 	## xfce
-	THE_XFCE_BG_OPTION_LIST="cover center tile full extend fill"
+	THE_XFCE_BG_OPTION_LIST="0 1 2 3 4 5"
 
 	## wallpaper
 	THE_WALLPAPER_DEFAULT_FILE_PATH="/usr/share/backgrounds/xfce/palm-wave.jpg"
