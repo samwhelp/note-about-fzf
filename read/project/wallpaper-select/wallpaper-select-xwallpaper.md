@@ -56,6 +56,12 @@ cd ~/Pictures
 
 然後執行下面指令，就會隨機選取該資料夾的某一張圖片，設定為桌面圖片。
 
-```
+``` sh
 wallpaper-select-xwallpaper shuf
+```
+
+或是直接執行
+
+``` sh
+wallpaper-select-xwallpaper shuf ~/Pictures
 ```

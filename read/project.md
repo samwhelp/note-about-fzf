@@ -15,6 +15,8 @@ has_children: true
 | [wallpaper-select-hsetroot](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-hsetroot) | `wallpaper-select-hsetroot fzf` |
 | [wallpaper-select-xwallpaper](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-xwallpaper) | `wallpaper-select-xwallpaper fzf` |
 | [wallpaper-select-xfce](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-xfce) | `wallpaper-select-xfce fzf` |
+| [wallpaper-select-gnome](https://samwhelp.github.io/note-about-fzf/read/project/wallpaper-select/wallpaper-select-gnome) | `wallpaper-select-xfce fzf` |
+
 
 ## Vim
 
