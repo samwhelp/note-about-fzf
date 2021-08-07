@@ -68,8 +68,8 @@ has_children: true
 
 | 專案 | 指令 |
 | --- | --- |
-| [awesomewmrc-get](https://samwhelp.github.io/note-about-awesome-wm/read/project/awesomewmrc-profile/awesomewmrc-get.html) | `awesomewmrc-get fzf` |
-| [awesomewmrc-ctrl](https://samwhelp.github.io/note-about-awesome-wm/read/project/awesomewmrc-profile/awesomewmrc-ctrl.html) | `awesomewmrc-ctrl fzf` |
+| [awesomewmrc-get](https://samwhelp.github.io/note-about-awesomewm/read/project/awesomewmrc-profile/awesomewmrc-get.html) | `awesomewmrc-get fzf` |
+| [awesomewmrc-ctrl](https://samwhelp.github.io/note-about-awesomewm/read/project/awesomewmrc-profile/awesomewmrc-ctrl.html) | `awesomewmrc-ctrl fzf` |
 
 
 ## I3wm
