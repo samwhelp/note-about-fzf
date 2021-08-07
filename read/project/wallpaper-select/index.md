@@ -21,4 +21,4 @@ parent: 專案
 | [wallpaper-select-hsetroot](wallpaper-select-hsetroot) |
 | [wallpaper-select-xwallpaper](wallpaper-select-xwallpaper) |
 | [wallpaper-select-xfce](wallpaper-select-xfce) |
-| [wallpaper-select-xfce](wallpaper-select-gnome) |
+| [wallpaper-select-gnome](wallpaper-select-gnome) |
