@@ -7,6 +7,14 @@ has_children: true
 # 專案
 
 
+## Grub
+
+| 專案 | 指令 |
+| --- | --- |
+| [grubrc-theme-get](https://samwhelp.github.io/note-about-grub/read/project/grubrc-profile/grubrc-theme-get.html) | `grubrc-theme-get fzf` |
+| [grubrc-theme-ctrl](https://samwhelp.github.io/note-about-grub/read/project/grubrc-profile/grubrc-theme-ctrl.html) | `grubrc-theme-ctrl fzf` |
+
+
 ## Wallpaper
 
 | 專案 | 指令 |
