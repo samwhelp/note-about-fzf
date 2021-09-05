@@ -1011,6 +1011,19 @@ mod_wallpaper_select_shuf_file_path () {
 
 
 ################################################################################
+### Head: Model mod_wallpaper_select_shuf_favorite
+##
+
+mod_wallpaper_select_shuf_favorite () {
+	mod_wallpaper_select_shuf "$THE_WALLPAPER_FAVORITE_DIR_PATH"
+}
+
+##
+### Tail: Model mod_wallpaper_select_shuf_favorite
+################################################################################
+
+
+################################################################################
 ### Head: Model fzf
 ##
 
@@ -1388,6 +1401,12 @@ sub_run_shuf_file_path () {
 }
 
 
+sub_run_shuf_favorite () {
+	#echo "sub_run_shuf_favorite"
+	mod_wallpaper_select_shuf_favorite "$@"
+}
+
+
 sub_run_fzf () {
 	#echo "sub_run_fzf"
 	mod_fzf "$@"
@@ -1500,6 +1519,8 @@ Example:
 		$ $cmd_name shuf_file_path /usr/share/backgrounds/xfce
 		$ $cmd_name shuf_file_path ~/Pictures
 		$ $cmd_name shuf_file_path ~/Pictures/Wallpaper/
+
+		$ $cmd_name shuf_favorite
 
 	## fzf
 

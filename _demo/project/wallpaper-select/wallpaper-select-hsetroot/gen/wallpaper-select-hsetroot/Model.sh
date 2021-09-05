@@ -12,6 +12,7 @@
 <?php include_once(__DIR__ . '/Section/Model/path_xfce/Core.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Model/shuf/Core.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Model/shuf_file_path/Core.sh'); ?>
+<?php include_once(__DIR__ . '/Section/Model/shuf_favorite/Core.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Model/fzf/Core.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Model/fzf_no_preview/Core.sh'); ?>
 <?php include_once(__DIR__ . '/Section/Model/_fzf_preview_area/Core.sh'); ?>
