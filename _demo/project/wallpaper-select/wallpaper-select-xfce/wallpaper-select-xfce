@@ -601,6 +601,8 @@ sys_xfce_find_bg_option_list () {
 
 	local list="$THE_XFCE_BG_OPTION_LIST"
 
+	local allow=""
+
 	for allow in $list; do
 		echo "$allow"
 	done
@@ -616,9 +618,16 @@ sys_xfce_map_bg_option () {
 
 sys_xfce_find_bg_option () {
 	local option="$1"
+
+	if [ "none$option" = "none" ]; then
+		option="zoom"
+	fi
+
 	option="$(sys_xfce_map_bg_option "$option")"
 
 	local list="$THE_XFCE_BG_OPTION_LIST"
+
+	local allow=""
 
 	for allow in $list; do
 		if [ "select_$allow" = "select_$option" ]; then
