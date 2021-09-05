@@ -1540,17 +1540,17 @@ Example:
 
 	## wallpaper_select
 
-		$ $cmd_name default
-
 		$ $cmd_name list
 		$ $cmd_name list /usr/share/backgrounds
 		$ $cmd_name list /usr/share/backgrounds/xfce
 		$ $cmd_name list ~/Pictures
 		$ $cmd_name list ~/Pictures/Wallpaper/
 
-		$ $cmd_name get
-
 		$ $cmd_name set "/usr/share/backgrounds/xfce/palm-wave.jpg"
+
+		$ $cmd_name default
+
+		$ $cmd_name get
 
 
 Debug:
