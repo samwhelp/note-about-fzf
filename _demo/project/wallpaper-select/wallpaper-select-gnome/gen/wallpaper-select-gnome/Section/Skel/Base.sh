@@ -96,13 +96,12 @@ base_var_init () {
 	THE_GNOME_BG_OPTION_LIST="cover center tile full extend fill"
 
 	## wallpaper
-	THE_WALLPAPER_DEFAULT_FILE_PATH="/usr/share/backgrounds/xfce/palm-wave.jpg"
-
 	THE_WALLPAPER_DEFAULT_DIR_PATH="/usr/share/backgrounds"
-
+	THE_WALLPAPER_XFCE_DIR_PATH="/usr/share/backgrounds/xfce"
 	THE_WALLPAPER_FAVORITE_DIR_PATH="$HOME/Pictures/Wallpaper"
 
-	THE_WALLPAPER_XFCE_DIR_PATH="/usr/share/backgrounds/xfce"
+	THE_WALLPAPER_DEFAULT_FILE_PATH="$THE_WALLPAPER_FAVORITE_DIR_PATH/default.png"
+	THE_WALLPAPER_FAVORITE_FILE_PATH="$THE_WALLPAPER_FAVORITE_DIR_PATH/favorite.png"
 
 
 
@@ -162,13 +161,12 @@ base_var_dump () {
 	util_debug_echo "THE_GNOME_BG_OPTION_LIST=$THE_GNOME_BG_OPTION_LIST"
 
 	## wallpaper
-	util_debug_echo "THE_WALLPAPER_DEFAULT_FILE_PATH=$THE_WALLPAPER_DEFAULT_FILE_PATH"
-
 	util_debug_echo "THE_WALLPAPER_DEFAULT_DIR_PATH=$THE_WALLPAPER_DEFAULT_DIR_PATH"
-
 	util_debug_echo "THE_WALLPAPER_FAVORITE_DIR_PATH=$THE_WALLPAPER_FAVORITE_DIR_PATH"
-
 	util_debug_echo "THE_WALLPAPER_XFCE_DIR_PATH=$THE_WALLPAPER_XFCE_DIR_PATH"
+
+	util_debug_echo "THE_WALLPAPER_DEFAULT_FILE_PATH=$THE_WALLPAPER_DEFAULT_FILE_PATH"
+	util_debug_echo "THE_WALLPAPER_FAVORITE_FILE_PATH=$THE_WALLPAPER_FAVORITE_FILE_PATH"
 
 
 	util_debug_echo "#"
