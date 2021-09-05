@@ -13,11 +13,11 @@ sys_xfce_wallpaper_set () {
 	local monitor=`xrandr --listactivemonitors | awk -F ' ' 'END {print $2}' | tr -d \*+`
 
 
-	util_error_echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen${screen}/monitor${monitor}/workspace0/last-image --set $file_path"
+	util_error_echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen${screen}/monitor${monitor}/workspace0/last-image --set $file_path --type 'string' --create"
 	xfconf-query --channel xfce4-desktop --property "/backdrop/screen${screen}/monitor${monitor}/workspace0/last-image" --set "$file_path" --type 'string' --create
 
-	util_error_echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen${screen}/monitor${monitor}/workspace0/image-style --set $bg_option"
-	xfconf-query --channel xfce4-desktop --property "/backdrop/screen${screen}/monitor${monitor}/workspace0/image-style" --set "$bg_option" --type 'string' --create
+	util_error_echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen${screen}/monitor${monitor}/workspace0/image-style --set $bg_option --type 'int' --create"
+	xfconf-query --channel xfce4-desktop --property "/backdrop/screen${screen}/monitor${monitor}/workspace0/image-style" --set "$bg_option" --type 'int' --create
 
 
 	util_error_echo "xfconf-query --channel xfce4-desktop --property /backdrop/single-workspace-mode --set 'true' --type 'bool' --create"
