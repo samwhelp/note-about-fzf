@@ -102,3 +102,10 @@ has_children: true
 | --- | --- |
 | [polybarrc-get](https://samwhelp.github.io/note-about-polybar/read/project/polybarrc-profile/polybarrc-get.html) | `polybarrc-get fzf` |
 | [polybarrc-ctrl](https://samwhelp.github.io/note-about-polybar/read/project/polybarrc-profile/polybarrc-ctrl.html) | `polybarrc-ctrl fzf` |
+
+
+## Archcraft
+
+| 專案 | 指令 |
+| --- | --- |
+| [archcraft-openbox-style-select](https://github.com/samwhelp/archcraft-openbox-style-select) | `archcraft-openbox-style-select fzf` |
