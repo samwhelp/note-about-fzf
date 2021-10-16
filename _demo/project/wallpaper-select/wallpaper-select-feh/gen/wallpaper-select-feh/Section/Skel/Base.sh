@@ -93,7 +93,7 @@ base_var_init () {
 	THE_UEBERZUG_CTRL="/tmp/ueberzug-ctrl"
 
 	## feh
-	THE_FEH_BG_OPTION_LIST="center fill max scale tile"
+	THE_FEH_BG_OPTION_LIST="fill scale max center tile"
 
 	## wallpaper
 	THE_WALLPAPER_DEFAULT_DIR_PATH="/usr/share/backgrounds"

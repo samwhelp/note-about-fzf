@@ -25,7 +25,8 @@ sys_feh_find_bg_option () {
 		fi
 	done
 
-	echo '--bg-scale'
+	#echo '--bg-scale'
+	echo '--bg-fill'
 }
 
 

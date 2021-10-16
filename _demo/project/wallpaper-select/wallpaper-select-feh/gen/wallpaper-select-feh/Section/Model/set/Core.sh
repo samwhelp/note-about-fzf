@@ -32,11 +32,17 @@ mod_wallpaper_select_set () {
 
 	option="$(sys_feh_find_bg_option $option)"
 
+	##
+	## feh --bg-fill "/usr/share/backgrounds/xfce/palm-wave.jpg"
 	## feh --bg-scale "/usr/share/backgrounds/xfce/palm-wave.jpg"
+	## feh --bg-max "/usr/share/backgrounds/xfce/palm-wave.jpg"
+	## feh --bg-center "/usr/share/backgrounds/xfce/palm-wave.jpg"
+	## feh --bg-tile "/usr/share/backgrounds/xfce/palm-wave.jpg"
+	##
 
 	util_error_echo "## mod_wallpaper_select_set"
-	util_error_echo "feh $option $target"
-	feh "$option" "$target"
+	util_error_echo "exec feh $option $target"
+	exec feh "$option" "$target"
 
 }
 
