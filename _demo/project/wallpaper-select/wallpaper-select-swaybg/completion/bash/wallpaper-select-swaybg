@@ -1,0 +1,18 @@
+
+## /usr/local/share/bash-completion/completions/wallpaper-select-swaybg
+## $ sudo install -Dm644 ./wallpaper-select-swaybg /usr/local/share/bash-completion/completions/wallpaper-select-swaybg
+
+_wallpaper_select_swaybg () {
+
+	local cur prev words cword
+	_init_completion || return
+
+	if [ "$cword" = "1" ]; then
+		local action_list=$(DEBUG_WALLPAPER_SELECT=false wallpaper-select-swaybg self_actions)
+		COMPREPLY=( $( compgen -W "$action_list" -- "$cur" ) )
+	fi
+
+	return 0
+}
+
+complete -F _wallpaper_select_swaybg wallpaper-select-swaybg
