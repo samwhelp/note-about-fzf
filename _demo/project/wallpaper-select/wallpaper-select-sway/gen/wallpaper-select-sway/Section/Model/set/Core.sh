@@ -34,36 +34,19 @@ mod_wallpaper_select_set () {
 
 
 	##
-	## $ cat ~/.azotebg
-	##
-	## ```
-	## #!/usr/bin/env bash
-	## pkill swaybg
-	## swaybg -o 'LVDS-1' -i "/usr/share/backgrounds/default.jpg" -m fill &
-	## swaybg -o 'VGA-2' -i "/usr/share/backgrounds/default.jpg" -m fill &
+	## ``` sh
+	## swaymsg 'output * bg ~/Pictures/Wallpaper/default.jpg fill'
 	## ```
 	##
 
 	mod_wallpaper_select_set_save_to_azotebg
 
 	util_error_echo "## mod_wallpaper_select_set"
-	util_error_echo "pkill swaybg"
-	util_error_echo "swaybg -o '*' -i $target -m $option"
-	pkill swaybg
-	swaybg -o '*' -i "$target" -m "$option" &
+	util_error_echo
+	util_error_echo "swaymsg 'output * bg $target $option'"
 
+	swaymsg "output "'*'" bg $target $option" &
 
-	##
-	## $ man swaybg
-	## stretch, fill, fit, center, or tile
-	##
-	## pkill swaybg
-	## swaybg -o '*' -i "/usr/share/backgrounds/default.jpg" -m fill &
-	## swaybg -o '*' -i "/usr/share/backgrounds/default.jpg" -m fit &
-	## swaybg -o '*' -i "/usr/share/backgrounds/default.jpg" -m stretch &
-	## swaybg -o '*' -i "/usr/share/backgrounds/default.jpg" -m center &
-	## swaybg -o '*' -i "/usr/share/backgrounds/default.jpg" -m tile &
-	##
 }
 
 
@@ -74,8 +57,7 @@ mod_wallpaper_select_set_save_to_azotebg () {
 	local tmp_file_path="/tmp/azotebg.${the_now}"
 
 	echo '#''!''/usr/bin/env bash' > "$tmp_file_path"
-	echo 'pkill swaybg' >> "$tmp_file_path"
-	echo "swaybg -o '*'" '-i' '"'"$target"'"' '-m' '"'"$option"'"' '&' >> "$tmp_file_path"
+	echo "swaymsg 'output * bg" '"'"$target"'"' "$option""'" '&' >> "$tmp_file_path"
 
 	util_error_echo "install -Dm755 $tmp_file_path $target_file_path"
 	install -Dm755 "$tmp_file_path" "$target_file_path"

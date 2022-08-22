@@ -14,8 +14,9 @@ mod_wallpaper_select_get () {
 		return 0
 	fi
 
-	grep '^swaybg' "$HOME/.azotebg" | awk '{print $5}' | awk -F '"' '{print $2}'
+	#grep '^swaybg' "$HOME/.azotebg" | awk '{print $5}' | awk -F '"' '{print $2}'
 
+	grep '^swaymsg' "$HOME/.azotebg" | awk '{print $5}' | awk -F '"' '{print $2}'
 }
 
 ##
