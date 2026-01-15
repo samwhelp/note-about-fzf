@@ -11,6 +11,7 @@
 ## 主題
 
 * [入門](#入門)
+* [按鍵綁定](#https://samwhelp.github.io/note-about-fzf/read/start/keybind.html)
 * [專案](#專案)
 * [安裝](#安裝)
 * [相關筆記](#相關筆記)
