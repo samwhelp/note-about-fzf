@@ -7,7 +7,7 @@ grand_parent: 入門
 ---
 
 
-# 如何在「Void Linux」，安裝「fzf」
+# 如何在「Fedora」，安裝「fzf」
 
 
 
