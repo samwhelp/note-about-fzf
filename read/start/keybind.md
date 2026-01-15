@@ -1,20 +1,20 @@
 ---
-title: fzf / 搭配「Shell」的「按鍵綁定」
+title: fzf / 按鍵綁定
 nav_order: 1020
 has_children: true
 parent: 入門
 ---
 
 
-# fzf / 搭配「Shell」的「按鍵綁定」
+# fzf / 按鍵綁定
 
-* [Shell 按鍵綁定](#shell-按鍵綁定)
+* [搭配「Shell」的「按鍵綁定」](#shell-按鍵綁定)
 * [進到fzf查詢界面的按鍵綁定](#進到fzf查詢界面的按鍵綁定)
 
 
 
 
-## Shell 按鍵綁定
+## 搭配「Shell」的「按鍵綁定」
 
 | Shell 按鍵綁定  | 功能簡述                   |
 | -------------- | ------------------------- |
