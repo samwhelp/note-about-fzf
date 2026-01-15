@@ -24,7 +24,7 @@ grand_parent: 入門
 
 ## 安裝
 
-執行下面指令，安裝相關套件。
+執行下面指令，安裝「Package: [fzf](https://packages.debian.org/stable/fzf)」。
 
 ``` sh
 sudo apt-get install fzf
@@ -44,7 +44,7 @@ fzf --version
 顯示
 
 ```
-0.60 (devel)
+0.60
 ```
 
 

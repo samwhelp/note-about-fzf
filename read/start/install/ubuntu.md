@@ -13,3 +13,56 @@ grand_parent: 入門
 
 
 ## 主題
+
+* [安裝](#安裝)
+* [版本](#版本)
+* [整合設定](#整合設定)
+* [接下來](#接下來)
+
+
+
+
+## 安裝
+
+執行下面指令，安裝「Package: [fzf](https://packages.ubuntu.com/questing/fzf)」。
+
+``` sh
+sudo apt-get install fzf
+```
+
+
+
+
+## 版本
+
+執行
+
+``` sh
+fzf --version
+```
+
+顯示
+
+```
+0.60.3
+```
+
+
+
+
+## 整合設定
+
+### bash
+
+在「bash」，只要加入[下面一行](https://github.com/samwhelp/ubuntu-adjustment/blob/main/prototype/main/shell-config/bash-config/asset/overlay/etc/skel/.fzf-load.bash#L27)到「`~/.bashrc`」。
+
+``` sh
+[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && . /usr/share/doc/fzf/examples/key-bindings.bash
+```
+
+
+
+
+## 接下來
+
+> 接下來，了解「[fzf / 搭配「Shell」的「按鍵綁定」](https://samwhelp.github.io/note-about-fzf/read/start/keybind.html)」。
