@@ -1,6 +1,6 @@
 ---
 title: fzf / 搭配「Shell」的「按鍵綁定」
-nav_order: 1010
+nav_order: 1020
 has_children: true
 parent: 入門
 ---
